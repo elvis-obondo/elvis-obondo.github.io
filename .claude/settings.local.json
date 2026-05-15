@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /var/folders /tmp ~/Downloads ~/Desktop -name \"ElvisObondoResume.pdf\" -o -name \"*.pdf\" 2>/dev/null | head -10)",
+      "Read(//private/var/folders/**)",
+      "Bash(find /var/folders /tmp ~/Downloads ~/Desktop -name \"*.jpg\" -newer /Users/elvisobondo/Website 2>/dev/null | head -10)",
+      "Bash(find ~/Downloads ~/Desktop ~/Documents -name \"*Elvis*\" -o -name \"*Obondo*\" -o -name \"*Resume*\" 2>/dev/null | head -20)",
+      "Read(//Users/elvisobondo/Downloads/**)",
+      "Bash(open /Users/elvisobondo/Website/index.html)",
+      "Bash(find ~/Downloads ~/Desktop ~/Documents -name \"IR_Final*\" -o -name \"DE_Project*\" 2>/dev/null | head -10)",
+      "Read(//Users/elvisobondo/Desktop/**)",
+      "Bash(cp \"/Users/elvisobondo/Downloads/IR_FinalPaper1-2.pdf\" /Users/elvisobondo/Website/assets/ir-paper.pdf)",
+      "Bash(cp \"/Users/elvisobondo/Downloads/DE_Project \\(2\\).pdf\" /Users/elvisobondo/Website/assets/de-paper.pdf)"
+    ]
+  }
+}
