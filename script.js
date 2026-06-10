@@ -98,6 +98,36 @@ ScrollTrigger.create({
   },
 });
 
+/* ── Mobile nav toggle ───────────────────────────────── */
+const hamburger = document.getElementById('nav-hamburger');
+const mobileNav = document.getElementById('nav-mobile');
+
+if (hamburger && mobileNav) {
+  const openMenu = () => {
+    mobileNav.classList.add('open');
+    mobileNav.setAttribute('aria-hidden', 'false');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileNav.classList.remove('open');
+    mobileNav.setAttribute('aria-hidden', 'true');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  document.querySelectorAll('.nav-mobile-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+}
+
 /* ── Project card GSAP hover ─────────────────────────── */
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mouseenter', () => {

@@ -791,6 +791,91 @@ footer {
 
 .research-link a:hover { color: var(--gold); }
 
+/* ── Hamburger / Mobile Nav ─────────────────────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 200;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform 0.35s var(--ease-out-expo), opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-hamburger.open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  background: var(--cream);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.35s var(--ease-out-expo), transform 0.35s var(--ease-out-expo);
+}
+
+.nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.nav-mobile-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: min(90%, 400px);
+}
+
+.nav-mobile-link {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-mobile-links li:first-child .nav-mobile-link {
+  border-top: 1px solid var(--border);
+}
+
+.nav-mobile-link:active {
+  color: var(--gold);
+}
+
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 900px) {
   #hero {
@@ -854,14 +939,44 @@ footer {
 }
 
 @media (max-width: 600px) {
-  section { padding-block: 5rem; }
-
-  .hero-name { font-size: clamp(4rem, 16vw, 6rem); }
+  section { padding-block: 4.5rem; }
 
   .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  .hero-name { font-size: clamp(3.8rem, 15vw, 5.5rem); }
+
+  .hero-text {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-image-wrap {
+    min-height: 50vw;
+    height: 60vw;
+  }
+
+  .project-card,
+  .research-card {
+    padding: 1.5rem;
+  }
 
   .project-metrics {
     flex-wrap: wrap;
     gap: 1.5rem;
+  }
+
+  .contact-headline {
+    font-size: clamp(2.8rem, 11vw, 7rem);
+    margin: 2rem 0 2.5rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.65rem;
+  }
+
+  .exp-role {
+    font-size: 1.3rem;
   }
 }
