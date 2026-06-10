@@ -952,8 +952,12 @@ footer {
   }
 
   .hero-image-wrap {
-    min-height: 50vw;
-    height: 60vw;
+    min-height: 65vw;
+    height: 75vw;
+  }
+
+  .hero-image-wrap img {
+    object-position: center 70%;
   }
 
   .project-card,
