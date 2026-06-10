@@ -952,12 +952,13 @@ footer {
   }
 
   .hero-image-wrap {
-    min-height: 65vw;
-    height: 75vw;
+    height: auto;
+    min-height: unset;
+    aspect-ratio: 3 / 4;
   }
 
   .hero-image-wrap img {
-    object-position: center 70%;
+    object-position: center center;
   }
 
   .project-card,
