@@ -954,11 +954,11 @@ footer {
   .hero-image-wrap {
     height: auto;
     min-height: unset;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 4/ 5;
   }
 
   .hero-image-wrap img {
-    object-position: center center;
+    object-position: center 35%;
   }
 
   .project-card,
