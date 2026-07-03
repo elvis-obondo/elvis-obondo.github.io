@@ -791,6 +791,90 @@ footer {
 
 .research-link a:hover { color: var(--gold); }
 
+/* ── Certificates ──────────────────────────────────────── */
+#certificates {
+  border-bottom: 1px solid var(--border);
+}
+
+.certificates-list {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.certificate-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
+}
+
+.certificate-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(20, 18, 16, 0.08);
+}
+
+.certificate-issuer {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.certificate-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.certificate-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.certificate-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.certificate-links a {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.certificate-links a:hover { color: var(--gold); }
+
 /* ── Hamburger / Mobile Nav ─────────────────────────────── */
 .nav-hamburger {
   display: none;
@@ -912,12 +996,14 @@ footer {
   }
 
   .project-card,
-  .research-card {
+  .research-card,
+  .certificate-card {
     grid-template-columns: 1fr;
   }
 
   .project-link,
-  .research-link {
+  .research-link,
+  .certificate-links {
     align-items: flex-start;
   }
 
@@ -962,7 +1048,8 @@ footer {
   }
 
   .project-card,
-  .research-card {
+  .research-card,
+  .certificate-card {
     padding: 1.5rem;
   }
 
